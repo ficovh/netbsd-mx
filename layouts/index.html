@@ -1,0 +1,233 @@
+{{ define "main" }}
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow">Comunidad NetBSD en México</p>
+        <h1>El Unix portable que <em>funciona</em> en todo.</h1>
+        <p class="lede">NetBSD corre en servidores, laptops, consolas y hardware con décadas de historia. Este es un espacio en español para aprender a usarlo, documentarlo y compartirlo.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="{{ "/referencias/" | relURL }}">
+            Explora el proyecto
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <a class="btn btn-ghost" href="{{ "/blog/" | relURL }}">Lee el blog</a>
+        </div>
+        <p class="hero-note">Sitio comunitario · no afiliado a The NetBSD Foundation</p>
+      </div>
+
+      <div class="hero-visual">
+        <div class="terminal" aria-hidden="true">
+          <div class="terminal-bar">
+            <span class="terminal-dot"></span>
+            <span class="terminal-dot"></span>
+            <span class="terminal-dot"></span>
+            <span class="terminal-title">mx@netbsd: ~</span>
+            <span class="terminal-badge">11.0</span>
+          </div>
+          <div class="terminal-body">
+            <p><span class="t-prompt">mx@netbsd:~$</span> <span class="t-cmd">uname -a</span></p>
+            <p><span class="t-dim">NetBSD mx 11.0 NetBSD 11.0 (GENERIC) amd64</span></p>
+            <p>&nbsp;</p>
+            <p><span class="t-prompt">mx@netbsd:~$</span> <span class="t-cmd">pkgin install nginx</span></p>
+            <p><span class="t-dim">calculating dependencies... done.</span></p>
+            <p><span class="t-dim">1 package to install: nginx</span></p>
+            <p><span class="t-ok">✓</span> <span class="t-dim">instalado en /usr/pkg</span></p>
+            <p>&nbsp;</p>
+            <p><span class="t-prompt">mx@netbsd:~$</span> <span class="t-cmd">service nginx start</span></p>
+            <p><span class="t-dim">Starting nginx.</span></p>
+            <p><span class="t-prompt">mx@netbsd:~$</span> <span class="t-cursor"></span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="stats" aria-label="NetBSD en cifras">
+    <div class="wrap stats-grid">
+      <div class="stat">
+        <span class="stat-value">1993</span>
+        <span class="stat-label">Origen del proyecto</span>
+      </div>
+      <div class="stat">
+        <span class="stat-value">50+</span>
+        <span class="stat-label">Plataformas soportadas</span>
+      </div>
+      <div class="stat">
+        <span class="stat-value">11.0</span>
+        <span class="stat-label">Versión estable actual</span>
+      </div>
+      <div class="stat">
+        <span class="stat-value">BSD</span>
+        <span class="stat-label">Licencia permisiva</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <p class="kicker">Por qué NetBSD</p>
+          <h2>Ingeniería sobria, resultados duraderos.</h2>
+          <p class="lede">No es el sistema más ruidoso del ecosistema, pero sí uno de los más cuidados. Estas son las razones por las que seguimos usándolo.</p>
+        </div>
+        <a class="section-link" href="https://www.netbsd.org/about/" target="_blank" rel="noopener noreferrer">Acerca del proyecto ↗</a>
+      </div>
+
+      <div class="feature-grid">
+        <article class="feature">
+          <span class="feature-index">01</span>
+          <span class="feature-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="12" rx="2"/><path d="M9 2v4M15 2v4M9 18v4M15 18v4M2 9h4M2 15h4M18 9h4M18 15h4"/></svg>
+          </span>
+          <h3>Portabilidad real</h3>
+          <p>Un mismo sistema corre en amd64, Raspberry Pi, Sun UltraSPARC, PowerPC, RISC-V y hardware de los años ochenta. El mismo código, muchas arquitecturas.</p>
+        </article>
+
+        <article class="feature">
+          <span class="feature-index">02</span>
+          <span class="feature-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="m8 6-6 6 6 6M16 6l6 6-6 6M14 4l-4 16"/></svg>
+          </span>
+          <h3>Diseño limpio</h3>
+          <p>Código legible, bien estructurado y documentado. Es un sistema excelente para aprender, investigar y enseñar cómo funciona un Unix por dentro.</p>
+        </article>
+
+        <article class="feature">
+          <span class="feature-index">03</span>
+          <span class="feature-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M12 3 5 6v5c0 4.5 3 8.2 7 10 4-1.8 7-5.5 7-10V6l-7-3Z"/><path d="m9 12 2 2 4-4"/></svg>
+          </span>
+          <h3>Seguridad por defecto</h3>
+          <p>PaX MPROTECT, ASLR, veriexec y un equipo de seguridad que publica avisos y parches con transparencia. Protecciones pensadas para producción.</p>
+        </article>
+
+        <article class="feature">
+          <span class="feature-index">04</span>
+          <span class="feature-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M21 8 12 3 3 8v8l9 5 9-5V8Z"/><path d="m3 8 9 5 9-5M12 13v8"/></svg>
+          </span>
+          <h3>pkgsrc</h3>
+          <p>Miles de paquetes listos para instalar. Funciona sobre NetBSD y también en Linux, macOS, illumos y otros Unix, con ramas trimestrales estables.</p>
+        </article>
+
+        <article class="feature">
+          <span class="feature-index">05</span>
+          <span class="feature-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4M7 9h.01M11 9h6"/></svg>
+          </span>
+          <h3>Virtualización nativa</h3>
+          <p>nvmm, el hipervisor integrado, más soporte para Xen, QEMU y dispositivos VirtIO. Ideal para laboratorios, pruebas y cargas en producción.</p>
+        </article>
+
+        <article class="feature">
+          <span class="feature-index">06</span>
+          <span class="feature-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M12 2v4M12 18v4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M2 12h4M18 12h4M4.9 19.1l2.8-2.8M16.3 7.7l2.8-2.8"/><circle cx="12" cy="12" r="3"/></svg>
+          </span>
+          <h3>Hardware con historia</h3>
+          <p>NetBSD 11.0 mejora el soporte para Nintendo Wii, Macintosh PowerPC, HP 9000 y equipos vintage. Darles una segunda vida es parte de la gracia.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-soft">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <p class="kicker">Del blog</p>
+          <h2>Notas, guías y experiencias.</h2>
+          <p class="lede">Documentamos lo que aprendemos: instalaciones, pkgsrc, hardware recuperado y novedades del proyecto.</p>
+        </div>
+        <a class="section-link" href="{{ "/blog/" | relURL }}">Ver todas las entradas →</a>
+      </div>
+
+      <div class="post-grid">
+        {{ range first 3 (where site.RegularPages "Section" "blog").ByDate.Reverse }}
+          {{ partial "post-card.html" . }}
+        {{ end }}
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="release">
+        <div>
+          <p class="kicker">Nueva versión estable</p>
+          <h2>NetBSD 11.0 ya está aquí.</h2>
+          <p>La decimonovena versión mayor llegó el 30 de julio de 2026 con un nuevo port a RISC-V, el kernel MICROVM para arranques ultrarrápidos y mejoras profundas en compatibilidad, redes y hardware.</p>
+          <div class="release-meta">
+            <span class="pill">RISC-V</span>
+            <span class="pill">MICROVM</span>
+            <span class="pill">POSIX.1-2024</span>
+            <span class="pill">Snapdragon X Elite</span>
+          </div>
+          <div class="release-actions">
+            <a class="btn btn-primary" href="https://www.netbsd.org/releases/formal-11/NetBSD-11.0.html" target="_blank" rel="noopener noreferrer">Notas de la versión</a>
+            <a class="btn btn-ghost" href="https://cdn.netbsd.org/pub/NetBSD/NetBSD-11.0/images/" target="_blank" rel="noopener noreferrer">Descargar NetBSD 11.0</a>
+          </div>
+        </div>
+
+        <ul class="release-list">
+          <li><span><strong>Nuevo port a RISC-V de 64 bits:</strong> VisionFive 2, PINE64 STAR64 y QEMU.</span></li>
+          <li><span><strong>MICROVM:</strong> un kernel x86 dedicado que arranca en unos 10 ms en CPUs modernas.</span></li>
+          <li><span><strong>Más compatibilidad:</strong> POSIX.1-2024, C23, epoll sobre kqueue, inotify y clone3 en compat_linux.</span></li>
+          <li><span><strong>Redes y seguridad:</strong> npf con filtrado de capa 2 y reglas por usuario y grupo.</span></li>
+          <li><span><strong>Hardware nuevo:</strong> soporte inicial para Qualcomm Snapdragon X Elite y mejoras para Wii y PowerPC.</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-soft">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <p class="kicker">Referencias</p>
+          <h2>Todo el proyecto, a un clic.</h2>
+          <p class="lede">Enlaces curados a la documentación, el código, los paquetes y los canales oficiales de NetBSD.</p>
+        </div>
+        <a class="section-link" href="{{ "/referencias/" | relURL }}">Ver todas las referencias →</a>
+      </div>
+
+      {{ $refs := slice }}
+      {{ range hugo.Data.referencias }}
+        {{ range .enlaces }}
+          {{ $refs = $refs | append . }}
+        {{ end }}
+      {{ end }}
+
+      <div class="resource-grid">
+        {{ range first 6 $refs }}
+          <a class="resource-row" href="{{ .url }}" target="_blank" rel="noopener noreferrer">
+            <span>
+              <strong>{{ .nombre }}</strong>
+              <span>{{ .descripcion }}</span>
+            </span>
+            <span class="arrow" aria-hidden="true">↗</span>
+          </a>
+        {{ end }}
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="cta">
+        <div>
+          <p class="kicker">Comunidad</p>
+          <h2>El código es libre. La comunidad también.</h2>
+          <p>Este sitio vive en GitHub: puedes corregir una guía, proponer un artículo o traducir documentación. También puedes sumarte a las listas de correo y al IRC del proyecto.</p>
+        </div>
+        <div class="cta-actions">
+          {{ with site.Params.github }}
+            <a class="btn btn-primary" href="{{ . }}" target="_blank" rel="noopener noreferrer">Colabora en GitHub</a>
+          {{ end }}
+          <a class="btn btn-ghost" href="{{ "/comunidad/" | relURL }}">Cómo participar</a>
+        </div>
+      </div>
+    </div>
+  </section>
+{{ end }}

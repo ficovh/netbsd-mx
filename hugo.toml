@@ -1,0 +1,60 @@
+# Configuración del sitio netbsd.org.mx
+baseURL = "https://www.netbsd.org.mx/"
+title = "NetBSD México"
+locale = "es-MX"
+defaultContentLanguage = "es"
+enableRobotsTXT = true
+summaryLength = 32
+copyright = "© 2026 NetBSD México. Sitio comunitario no oficial."
+
+[pagination]
+  pagerSize = 8
+
+[taxonomies]
+  tag = "tags"
+
+[params]
+  description = "Comunidad hispanohablante de NetBSD en México: guías, blog y recursos sobre el sistema operativo Unix libre, portable y seguro."
+  tagline = "Por supuesto, funciona."
+  # Cambia estas URLs cuando el repositorio esté publicado.
+  github = "https://github.com/netbsd-mx/netbsd.org.mx"
+  repo = "netbsd-mx/netbsd.org.mx"
+  author = "NetBSD México"
+
+[menus]
+  [[menus.main]]
+    name = "Inicio"
+    pageRef = "/"
+    weight = 10
+
+  [[menus.main]]
+    name = "Blog"
+    pageRef = "/blog"
+    weight = 20
+
+  [[menus.main]]
+    name = "Referencias"
+    pageRef = "/referencias"
+    weight = 30
+
+  [[menus.main]]
+    name = "Comunidad"
+    pageRef = "/comunidad"
+    weight = 40
+
+[markup]
+  [markup.goldmark.renderer]
+    unsafe = false
+  [markup.highlight]
+    codeFences = true
+    guessSyntax = true
+    noClasses = false
+    lineNos = false
+  [markup.tableOfContents]
+    startLevel = 2
+    endLevel = 3
+    ordered = false
+
+[outputs]
+  home = ["HTML", "RSS"]
+  section = ["HTML", "RSS"]

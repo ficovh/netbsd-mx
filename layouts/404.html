@@ -1,0 +1,28 @@
+{{ define "main" }}
+  <section class="page-head">
+    <div class="wrap">
+      <p class="eyebrow">Error 404</p>
+      <h1>Esta página no está en el árbol.</h1>
+      <p class="lede">Puede que el enlace esté roto, que la entrada se haya movido o que hayas escrito mal la dirección. El kernel no encontró la ruta.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="{{ "/" | relURL }}">Volver al inicio</a>
+        <a class="btn btn-ghost" href="{{ "/blog/" | relURL }}">Ir al blog</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="page-body">
+    <div class="wrap">
+      <div class="cta">
+        <div>
+          <p class="kicker">¿Buscabas algo del proyecto?</p>
+          <h2>Las referencias oficiales están a un clic.</h2>
+          <p>Documentación, pkgsrc, código fuente y canales de soporte de NetBSD.</p>
+        </div>
+        <div class="cta-actions">
+          <a class="btn btn-primary" href="{{ "/referencias/" | relURL }}">Ver referencias</a>
+        </div>
+      </div>
+    </div>
+  </section>
+{{ end }}

@@ -1,0 +1,21 @@
+{{ define "main" }}
+  <section class="page-head">
+    <div class="wrap">
+      <p class="eyebrow">Temas</p>
+      <h1>{{ .Title }}</h1>
+      {{ with .Description }}<p class="lede">{{ . }}</p>{{ end }}
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="tag-cloud">
+        {{ range .Data.Terms.Alphabetical }}
+          <a class="tag tag-lg" href="{{ .Page.RelPermalink }}">
+            {{ .Page.Title }} <span>{{ .Count }}</span>
+          </a>
+        {{ end }}
+      </div>
+    </div>
+  </section>
+{{ end }}

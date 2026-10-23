@@ -1,0 +1,37 @@
+{{ define "main" }}
+  <section class="page-head">
+    <div class="wrap">
+      <p class="eyebrow">Referencias</p>
+      <h1>{{ .Title }}</h1>
+      {{ with .Description }}<p class="lede">{{ . }}</p>{{ end }}
+    </div>
+  </section>
+
+  <section class="page-body">
+    <div class="wrap">
+      {{ with .Content }}
+        <div class="prose ref-intro">{{ . }}</div>
+      {{ end }}
+
+      {{ range $i, $grupo := hugo.Data.referencias }}
+        <section class="ref-group" aria-labelledby="grupo-{{ $i }}">
+          <div class="ref-group-head">
+            <h2 id="grupo-{{ $i }}">{{ $grupo.grupo }}</h2>
+            {{ with $grupo.descripcion }}<p>{{ . }}</p>{{ end }}
+          </div>
+
+          <div class="ref-grid">
+            {{ range $grupo.enlaces }}
+              <a class="ref-card" href="{{ .url }}" target="_blank" rel="noopener noreferrer">
+                <span class="ref-label">{{ .etiqueta }}</span>
+                <h3>{{ .nombre }}</h3>
+                <p>{{ .descripcion }}</p>
+                <span class="ref-arrow" aria-hidden="true">↗</span>
+              </a>
+            {{ end }}
+          </div>
+        </section>
+      {{ end }}
+    </div>
+  </section>
+{{ end }}

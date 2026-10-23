@@ -1,0 +1,13 @@
+{{ $tags := first 2 (.Params.tags | default slice) }}
+<article class="post-card">
+  <div class="post-card-top">
+    <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date | time.Format ":date_long" }}</time>
+    <span>{{ .ReadingTime }} min</span>
+  </div>
+  <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+  <p>{{ .Description | default (.Summary | plainify | truncate 150) }}</p>
+  <div class="post-card-foot">
+    {{ range $tags }}<span class="tag">{{ . }}</span>{{ end }}
+    <span class="more">Leer →</span>
+  </div>
+</article>

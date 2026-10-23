@@ -1,0 +1,17 @@
+{{ define "main" }}
+  <section class="page-head">
+    <div class="wrap">
+      <p class="eyebrow">{{ if eq .Section "comunidad" }}Comunidad{{ else }}NetBSD México{{ end }}</p>
+      <h1>{{ .Title }}</h1>
+      {{ with .Description }}<p class="lede">{{ . }}</p>{{ end }}
+    </div>
+  </section>
+
+  <section class="page-body">
+    <div class="wrap-narrow">
+      <div class="prose">
+        {{ .Content }}
+      </div>
+    </div>
+  </section>
+{{ end }}

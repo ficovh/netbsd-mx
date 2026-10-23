@@ -1,0 +1,65 @@
+{{ define "main" }}
+  <article class="post">
+    <header class="post-head">
+      <div class="wrap-narrow">
+        <nav class="crumbs" aria-label="Ruta de navegación">
+          <a href="{{ "/blog/" | relURL }}">Blog</a>
+          <span aria-hidden="true">/</span>
+          <span>{{ .Date | time.Format "2006" }}</span>
+          <span aria-hidden="true">/</span>
+          <span>{{ .Title }}</span>
+        </nav>
+
+        <h1>{{ .Title }}</h1>
+        {{ with .Description }}<p class="lede">{{ . }}</p>{{ end }}
+
+        <div class="post-meta">
+          <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date | time.Format ":date_long" }}</time>
+          <span class="dot" aria-hidden="true"></span>
+          <span>{{ .ReadingTime }} min de lectura</span>
+          {{ with .Params.tags }}
+            <span class="dot" aria-hidden="true"></span>
+            <span class="tags">
+              {{ range . }}
+                <a class="tag" href="{{ (printf "/tags/%s/" (urlize .)) | relURL }}">{{ . }}</a>
+              {{ end }}
+            </span>
+          {{ end }}
+        </div>
+      </div>
+    </header>
+
+    <div class="wrap post-layout">
+      <div class="prose post-body">
+        {{ .Content }}
+      </div>
+
+      {{ if .Fragments.Headings }}
+        <aside class="toc">
+          <p class="toc-title">En esta entrada</p>
+          {{ .TableOfContents }}
+        </aside>
+      {{ end }}
+    </div>
+
+    <footer class="post-footer wrap-narrow">
+      <nav class="post-nav" aria-label="Otras entradas">
+        {{ with .PrevInSection }}
+          <a href="{{ .RelPermalink }}" rel="prev">
+            <span class="dir">← Anterior</span>
+            <span class="title">{{ .Title }}</span>
+          </a>
+        {{ else }}
+          <span class="empty"></span>
+        {{ end }}
+
+        {{ with .NextInSection }}
+          <a href="{{ .RelPermalink }}" rel="next" class="next">
+            <span class="dir">Siguiente →</span>
+            <span class="title">{{ .Title }}</span>
+          </a>
+        {{ end }}
+      </nav>
+    </footer>
+  </article>
+{{ end }}

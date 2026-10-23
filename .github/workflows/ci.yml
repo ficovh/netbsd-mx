@@ -1,0 +1,24 @@
+name: Verificar compilación
+
+on:
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clonar el repositorio
+        uses: actions/checkout@v4
+
+      - name: Instalar Hugo
+        uses: peaceiris/actions-hugo@v3
+        with:
+          hugo-version: "0.168.0"
+          extended: true
+
+      - name: Compilar el sitio
+        run: hugo --minify --baseURL "https://www.netbsd.org.mx/"

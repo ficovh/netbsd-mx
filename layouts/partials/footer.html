@@ -1,0 +1,59 @@
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div class="footer-brand">
+      <a class="brand" href="{{ "/" | relURL }}" aria-label="NetBSD México — Inicio">
+        <span class="brand-mark" aria-hidden="true">N</span>
+        <span class="brand-text">
+          <strong>NetBSD</strong>
+          <span>México</span>
+        </span>
+      </a>
+      <p>Un espacio en español para documentar, difundir y compartir el uso de NetBSD. Sitio comunitario, hecho por usuarios y para usuarios.</p>
+    </div>
+
+    <div class="footer-col">
+      <h2>Explora</h2>
+      <ul>
+        {{ range site.Menus.main }}
+          <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+        {{ end }}
+        {{ with site.Home.OutputFormats.Get "rss" }}
+          <li><a href="{{ .RelPermalink }}">Feed RSS</a></li>
+        {{ end }}
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h2>Proyecto</h2>
+      <ul>
+        <li><a href="https://www.netbsd.org/" target="_blank" rel="noopener noreferrer">Sitio oficial</a></li>
+        <li><a href="https://www.netbsd.org/docs/guide/en/" target="_blank" rel="noopener noreferrer">La Guía de NetBSD</a></li>
+        <li><a href="https://www.pkgsrc.org/" target="_blank" rel="noopener noreferrer">pkgsrc</a></li>
+        <li><a href="https://www.netbsd.org/releases/" target="_blank" rel="noopener noreferrer">Versiones</a></li>
+        <li><a href="https://www.netbsd.org/donations/" target="_blank" rel="noopener noreferrer">Donaciones</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h2>Comunidad</h2>
+      <ul>
+        <li><a href="https://www.netbsd.org/mailinglists/" target="_blank" rel="noopener noreferrer">Listas de correo</a></li>
+        <li><a href="https://web.libera.chat/#netbsd" target="_blank" rel="noopener noreferrer">IRC: #netbsd</a></li>
+        <li><a href="https://github.com/NetBSD" target="_blank" rel="noopener noreferrer">GitHub del proyecto</a></li>
+        {{ with site.Params.github }}
+          <li><a href="{{ . }}" target="_blank" rel="noopener noreferrer">Repositorio de este sitio</a></li>
+        {{ end }}
+      </ul>
+    </div>
+  </div>
+
+  <div class="wrap footer-bottom">
+    <p>© {{ now.Year }} NetBSD México. Sitio comunitario no oficial.</p>
+    <p>NetBSD® es una marca registrada de The NetBSD Foundation, Inc.</p>
+    <p>
+      Contenido bajo <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.es" target="_blank" rel="noopener noreferrer">CC BY-SA 4.0</a>
+      <span class="sep">·</span>
+      Código bajo licencia MIT
+    </p>
+  </div>
+</footer>

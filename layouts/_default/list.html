@@ -1,0 +1,62 @@
+{{ define "main" }}
+  <section class="page-head">
+    <div class="wrap">
+      <p class="eyebrow">
+        {{- if eq .Section "blog" -}}
+          Entradas
+        {{- else if eq .Kind "term" -}}
+          Etiqueta
+        {{- else if eq .Kind "taxonomy" -}}
+          Temas
+        {{- else -}}
+          Archivo
+        {{- end -}}
+      </p>
+      <h1>{{ .Title }}</h1>
+      {{ with .Content }}<div class="lede">{{ . }}</div>{{ end }}
+      {{ if eq .Kind "term" }}
+        <p class="lede">Entradas etiquetadas con «{{ .Title }}».</p>
+      {{ end }}
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      {{ $pages := .Pages.ByDate.Reverse }}
+      {{ $pag := .Paginate $pages }}
+      {{ if $pages }}
+        <div class="post-grid post-grid--archive">
+          {{ range $pag.Pages }}
+            {{ partial "post-card.html" . }}
+          {{ end }}
+        </div>
+
+        {{ if gt $pag.TotalPages 1 }}
+          <nav class="pagination" aria-label="Paginación">
+            {{ with $pag.Prev }}
+              <a href="{{ .URL }}" aria-label="Página anterior">←</a>
+            {{ else }}
+              <span class="disabled" aria-hidden="true">←</span>
+            {{ end }}
+
+            {{ range $pag.Pagers }}
+              {{ if eq . $pag }}
+                <span class="active" aria-current="page">{{ .PageNumber }}</span>
+              {{ else }}
+                <a href="{{ .URL }}">{{ .PageNumber }}</a>
+              {{ end }}
+            {{ end }}
+
+            {{ with $pag.Next }}
+              <a href="{{ .URL }}" aria-label="Página siguiente">→</a>
+            {{ else }}
+              <span class="disabled" aria-hidden="true">→</span>
+            {{ end }}
+          </nav>
+        {{ end }}
+      {{ else }}
+        <p class="lede">Todavía no hay entradas publicadas.</p>
+      {{ end }}
+    </div>
+  </section>
+{{ end }}

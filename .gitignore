@@ -1,0 +1,13 @@
+# Salida de compilación
+public/
+resources/_gen/
+
+# Estado local de Hugo
+.hugo_build.lock
+
+# Sistema operativo y editores
+.DS_Store
+Thumbs.db
+*.swp
+.idea/
+.vscode/
