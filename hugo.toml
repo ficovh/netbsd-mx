@@ -17,8 +17,8 @@ copyright = "© 2026 NetBSD México. Sitio comunitario no oficial."
   description = "Comunidad hispanohablante de NetBSD en México: guías, blog y recursos sobre el sistema operativo Unix libre, portable y seguro."
   tagline = "Por supuesto, funciona."
   # Cambia estas URLs cuando el repositorio esté publicado.
-  github = "https://github.com/netbsd-mx/netbsd.org.mx"
-  repo = "netbsd-mx/netbsd.org.mx"
+  github = "https://github.com/ficovh/netbsd-mx"
+  repo = "ficovh/netbsd-mx"
   author = "NetBSD México"
 
 [menus]

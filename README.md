@@ -129,8 +129,8 @@ Antes de publicar un fork, revisa `hugo.toml`:
 baseURL = "https://www.netbsd.org.mx/"
 
 [params]
-  github = "https://github.com/netbsd-mx/netbsd.org.mx"
-  repo = "netbsd-mx/netbsd.org.mx"
+  github = "https://github.com/ficovh/netbsd-mx"
+  repo = "ficovh/netbsd-mx"
 ```
 
 Cambia `github` por la URL real del repositorio. Los enlaces de la comunidad y del pie de página se editan en `layouts/partials/footer.html`.

@@ -85,8 +85,8 @@ Si tienes hardware interesante —una arquitectura poco común, una tarjeta de r
 El flujo completo:
 
 ```sh
-git clone https://github.com/netbsd-mx/netbsd.org.mx.git
-cd netbsd.org.mx
+git clone https://github.com/ficovh/netbsd-mx.git
+cd netbsd-mx
 hugo new content blog/mi-articulo.md
 hugo server -D
 ```
